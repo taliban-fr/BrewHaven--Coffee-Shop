@@ -4,7 +4,6 @@ A full-stack coffee shop website. Customers browse the menu, fill a cart, check 
 
 This is a personal learning project, built with a FastAPI backend and a plain HTML/CSS/JavaScript frontend.
 
-<!--
 ## Screenshots
 
 ![Home page](docs/screenshots/Home.png)
@@ -12,7 +11,6 @@ This is a personal learning project, built with a FastAPI backend and a plain HT
 ![Mpesa payment](docs/screenshots/Payment.png)
 ![Products](docs/screenshots/Products.png)
 ![Admin dashboard](docs/screenshots/Admin.png)
--->
 
 ## Features
 
