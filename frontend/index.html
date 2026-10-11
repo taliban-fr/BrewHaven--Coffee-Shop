@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Premium Coffee</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!--link for inserting google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <!--link for adding bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Link to css file-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <img src="assets/images/logo.png" alt="coffee logo">
+                <div class="logo-text">Brew<span>Haven</span></div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li id="admin-link" hidden><a href="admin.html">Dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="nav-button">
+                <button class="cart-btn" id="cart-btn" aria-label="Open cart">
+                    <i class="bi bi-cart4"></i><span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="#" class="btn btn-secondary" id="signin-btn">Sign in</a>
+                <a href="#" class="btn btn-pri" id="order-btn">Order online</a>
+            </div>
+        </div>
+    </header>
+
+    <!--Hero Section-->
+    <section class="hero" id="home">
+        <!--Background video-->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/videos/coffee1.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-subtitle">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    Ethically Sourced Coffee
+                </div>
+                <h1 class="hero-title">Artisan Coffee <br><span>Crafted with Passion</span></h1>
+                <p class="hero-text">Discover single-origin coffees roasted to perfection in small batches for exceptional flavour.
+                    Experience the journey from bean to cup with our master roasters.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-pri">Explore our blends</a>
+                    <a href="#location" class="btn btn-secondary">Visit our Cafe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Products section-->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Our Selection</div>
+                <h2 class="section-title">Signature Coffee Blends</h2>
+                <p class="section-desc">Each batch is carefully roasted to highlight the unique characteristics of the beans</p>
+            </div>
+            <div class="product-grid" id="product-grid"></div>
+        </div>
+    </section>
+
+    <!--Location section-->
+    <section class="info-section location" id="location">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">Visit Our Cafe</h2>
+                <p class="section-desc">Come say hello. The coffee is always fresh.</p>
+            </div>
+            <div class="location-grid">
+                <div class="info-card">
+                    <h3>Find Us</h3>
+                    <ul class="info-list">
+                        <li><i class="bi bi-geo-alt-fill"></i> 50504, Waiyaki Way, Parklands</li>
+                        <li><i class="bi bi-telephone-fill"></i> +254 793 079 569</li>
+                        <li><i class="bi bi-envelope-fill"></i> help@brewhaven.com</li>
+                        <li><i class="bi bi-clock-fill"></i> Mon-Sat: 7am - 9pm</li>
+                    </ul>
+                    <a class="auth-btn dir-btn" target="_blank" rel="noopener"
+                       href="https://www.google.com/maps/search/?api=1&query=Waiyaki+Way+Nairobi">Get directions</a>
+                </div>
+                <iframe class="map" loading="lazy" allowfullscreen title="BrewHaven location"
+                    src="https://www.google.com/maps?q=Waiyaki+Way,+Nairobi&output=embed"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!--Contact section-->
+    <section class="info-section contact" id="contact">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-desc">Any queries or feedback? Send us a message.</p>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+                <button type="submit" class="auth-btn">Send message</button>
+                <p id="contact-msg"></p>
+            </form>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About BrewHaven</h3>
+                <p class="footer-about">Artisan coffee roasters dedicated to quality,
+                    sustainability, and the perfect cup</p>
+                <div class="social-links">
+                    <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#products">Coffee Blends</a></li>
+                    <li><a href="#">Brewing Guidelines</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="bi bi-geo-alt-fill"></i> 50504, Waiyaki Way, Parklands</li>
+                    <li><i class="bi bi-telephone-fill"></i> +254 793 079 569</li>
+                    <li><i class="bi bi-envelope-fill"></i> help@brewhaven.com</li>
+                    <li><i class="bi bi-clock-fill"></i> Mon-Sat: 7am - 9pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy;2026 BrewHaven Coffee Roasters. All rights reserved.
+        </div>
+    </footer>
+
+    <!--Cart drawer-->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-head">
+            <h3>Your Cart</h3>
+            <button id="cart-close" aria-label="Close cart">&times;</button>
+        </div>
+        <ul class="cart-items" id="cart-items"></ul>
+        <div class="cart-foot">
+            <div class="cart-total"><span>Total</span><strong id="cart-total">KSh 0</strong></div>
+            <div id="guest-fields">
+                <input id="order-name" type="text" placeholder="Your name" autocomplete="name">
+                <input id="order-email" type="email" placeholder="Email (optional, for updates)" autocomplete="email">
+            </div>
+            <input id="order-phone" type="tel" placeholder="Phone, e.g. 0712 345 678" autocomplete="tel">
+            <textarea id="order-note" rows="2" maxlength="300" placeholder="Notes for your order (optional)"></textarea>
+            <div class="pay-options" id="pay-options" hidden>
+                <label><input type="radio" name="pay" value="mpesa" checked> Pay now with M-Pesa</label>
+                <label><input type="radio" name="pay" value="cash"> Pay at pickup</label>
+            </div>
+            <button class="auth-btn" id="checkout-btn">Place order</button>
+            <p class="pay-note" id="pay-note">Pay when you pick up.</p>
+            <button class="link-btn" id="signin-checkout" type="button">Have an account? Sign in to order</button>
+            <button class="link-btn" id="my-orders-btn" type="button">My orders</button>
+        </div>
+    </aside>
+
+    <!--Forgot password modal-->
+    <div class="modal" id="forgot-modal">
+        <div class="forgot-box">
+            <button class="modal-close" id="forgot-close">&times;</button>
+            <h2>Forgot password?</h2>
+            <p>Enter your email and we'll send you a reset link.</p>
+            <form id="forgot-form">
+                <input type="email" name="email" placeholder="Email" required>
+                <button type="submit" class="auth-btn">Send reset link</button>
+            </form>
+            <p id="forgot-msg"></p>
+        </div>
+    </div>
+
+    <!--My orders modal-->
+    <div class="modal" id="orders-modal">
+        <div class="forgot-box orders-box">
+            <button class="modal-close" id="orders-close">&times;</button>
+            <h2>My orders</h2>
+            <div id="orders-list"></div>
+        </div>
+    </div>
+
+    <!--M-Pesa payment modal-->
+    <div class="modal" id="pay-modal">
+        <div class="forgot-box">
+            <h2 id="pay-title">Check your phone</h2>
+            <p id="pay-text"></p>
+            <div class="pay-actions">
+                <button class="auth-btn" id="pay-retry" type="button" hidden>Try again</button>
+                <button class="link-btn" id="pay-close" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Login / register modal-->
+    <div class="modal" id="auth-modal">
+        <div class="auth-container" id="auth-container">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <p id="auth-msg"></p>
+
+            <!-- Login -->
+            <div class="auth-form-box login">
+                <form id="login-form">
+                    <h1>Login</h1>
+                    <div class="auth-input">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="auth-input">
+                        <input type="password" name="password" placeholder="Password" required>
+                        <i class="bi bi-lock"></i>
+                    </div>
+                    <div class="auth-forgot"><a href="#" id="forgot-link">Forgot Password?</a></div>
+                    <button type="submit" class="auth-btn">Login</button>
+                    <p>or login with Google</p>
+                    <div class="auth-social">
+                        <div class="google-btn" id="google-login-btn"></div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Register -->
+            <div class="auth-form-box register">
+                <form id="register-form">
+                    <h1>Registration</h1>
+                    <div class="auth-input">
+                        <input type="text" name="name" placeholder="Full name" required>
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <div class="auth-input">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="auth-input">
+                        <input type="password" name="password" placeholder="Password (min 8 chars)" minlength="8" required>
+                        <i class="bi bi-lock"></i>
+                    </div>
+                    <button type="submit" class="auth-btn">Register</button>
+                    <p>or register with Google</p>
+                    <div class="auth-social">
+                        <div class="google-btn" id="google-register-btn"></div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sliding panel -->
+            <div class="auth-toggle-box">
+                <div class="auth-panel left">
+                    <h1>Hello, Welcome!</h1>
+                    <p>Don't have an account?</p>
+                    <button type="button" class="auth-btn outline" id="show-register">Register</button>
+                </div>
+                <div class="auth-panel right">
+                    <h1>Welcome Back!</h1>
+                    <p>Already have an account?</p>
+                    <button type="button" class="auth-btn outline" id="show-login">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Link to google script-->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!--Link to Javascript file-->
+    <script src="script.js"></script>
+</body>
+</html>

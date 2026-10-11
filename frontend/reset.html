@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset password - BrewHaven</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center;
+           justify-content: center; background: var(--coffee-dark); padding: 0; }
+  </style>
+</head>
+<body>
+  <div class="forgot-box">
+    <h2>Set a new password</h2>
+    <form id="reset-form">
+      <input type="password" name="password" placeholder="New password (min 8 chars)" minlength="8" required>
+      <input type="password" name="confirm" placeholder="Confirm password" minlength="8" required>
+      <button type="submit" class="auth-btn">Update password</button>
+    </form>
+    <p id="reset-msg"></p>
+    <a href="index.html">Back to BrewHaven</a>
+  </div>
+
+  <script>
+    const API = "http://127.0.0.1:8000";
+    const token = new URLSearchParams(location.search).get("token");
+    const msg = document.getElementById("reset-msg");
+
+    document.getElementById("reset-form").onsubmit = async (e) => {
+      e.preventDefault();
+      const { password, confirm } = Object.fromEntries(new FormData(e.target));
+      msg.style.color = "tomato";
+      if (!token) return (msg.textContent = "This reset link is missing its token.");
+      if (password !== confirm) return (msg.textContent = "Passwords do not match.");
+      try {
+        const res = await fetch(`${API}/reset-password`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token, password }),
+        });
+        const body = await res.json();
+        if (!res.ok) throw new Error(body.detail || "Something went wrong");
+        msg.style.color = "green";
+        msg.textContent = body.message;
+        e.target.reset();
+      } catch (err) {
+        msg.textContent = err.message;
+      }
+    };
+  </script>
+</body>
+</html>
