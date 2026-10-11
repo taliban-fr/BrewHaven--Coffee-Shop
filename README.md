@@ -6,11 +6,12 @@ This is a personal learning project, built with a FastAPI backend and a plain HT
 
 <!--
 ## Screenshots
-Add images to docs/screenshots/ and uncomment these lines:
 
-![Shop](docs/screenshots/shop.png)
-![Cart and checkout](docs/screenshots/cart.png)
-![Admin dashboard](docs/screenshots/admin.png)
+![Home page](docs/screenshots/Home.png)
+![Cart and order](docs/screenshots/Order.png)
+![Mpesa payment](docs/screenshots/Payment.png)
+![Products](docs/screenshots/Products.png)
+![Admin dashboard](docs/screenshots/Admin.png)
 -->
 
 ## Features
