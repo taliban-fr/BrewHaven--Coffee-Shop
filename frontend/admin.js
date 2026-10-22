@@ -1,4 +1,6 @@
-const API = "http://127.0.0.1:8000";
+const API = ["127.0.0.1", "localhost"].includes(location.hostname)
+  ? "http://127.0.0.1:8000"
+  : "https://brewhaven-api-rjkm.onrender.com";
 const token = localStorage.getItem("token");
 const STATUSES = ["pending", "preparing", "ready", "completed", "cancelled"];
 

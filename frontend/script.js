@@ -1,6 +1,8 @@
 console.log("JS is working");
 
-const API = "http://127.0.0.1:8000";
+const API = ["127.0.0.1", "localhost"].includes(location.hostname)
+  ? "http://127.0.0.1:8000"
+  : "https://brewhaven-api-rjkm.onrender.com";
 const GOOGLE_CLIENT_ID = "776335343723-6ctb6270u31ii0rp8vr8j3qv2g0fqdcj.apps.googleusercontent.com";
 
 const modal = document.getElementById("auth-modal");
