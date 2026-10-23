@@ -679,3 +679,16 @@ ordersModal.addEventListener("click", (e) => {
 
 loadProducts();
 renderCart();
+
+// ---------- Mobile menu ----------
+const menuToggle = document.getElementById("menu-toggle");
+const siteHeader = document.querySelector("header");
+function setMenu(open) {
+  siteHeader.classList.toggle("menu-open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.innerHTML = open ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-list"></i>';
+}
+menuToggle.addEventListener("click", () => setMenu(!siteHeader.classList.contains("menu-open")));
+siteHeader.querySelectorAll("nav a, #signin-btn, #order-btn").forEach((el) =>
+  el.addEventListener("click", () => setMenu(false))
+);
