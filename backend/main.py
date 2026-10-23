@@ -60,12 +60,12 @@ STATUS_MESSAGES = {
 }
 
 SEED_PRODUCTS = [
-    ("Ethiopian Yirgacheffe", "Floral notes with bright citrus acidity and a tea-like body. Light roast.", 1899, "1.jpeg", "BESTSELLER", 4.5),
-    ("Cappuccino", "Bold espresso balanced with equal parts steamed milk and a thick layer of velvety microfoam.", 2100, "2.jpg", None, 5),
-    ("Espresso", "A concentrated, full-bodied shot brewed under high pressure with a signature golden crema.", 1800, "3.jpg", None, 4),
-    ("Americano", "Rich espresso diluted with hot water for a smooth, traditional brewed-coffee profile.", 1900, "4.jpg", None, 4.5),
-    ("The Café Latte", "A smooth, milk-forward drink featuring espresso paired with a generous volume of steamed milk and a thin layer of foam.", 2150, "5.jpg", None, 5),
-    ("Macchiato", "An intense shot of espresso marked with a small dollop of velvety milk foam.", 2150, "6.jpg", "NEW", 4.5),
+    ("Ethiopian Yirgacheffe", "Floral notes with bright citrus acidity and a tea-like body. Light roast.", 24000, "1.jpeg", "BESTSELLER", 4.5),
+    ("Cappuccino", "Bold espresso balanced with equal parts steamed milk and a thick layer of velvety microfoam.", 35000, "2.jpg", None, 5),
+    ("Espresso", "A concentrated, full-bodied shot brewed under high pressure with a signature golden crema.", 30000, "3.jpg", None, 4),
+    ("Americano", "Rich espresso diluted with hot water for a smooth, traditional brewed-coffee profile.", 22000, "4.jpg", None, 4.5),
+    ("The Café Latte", "A smooth, milk-forward drink featuring espresso paired with a generous volume of steamed milk and a thin layer of foam.", 42000, "5.jpg", None, 5),
+    ("Macchiato", "An intense shot of espresso marked with a small dollop of velvety milk foam.", 33000, "6.jpg", "NEW", 4.5),
 ]
 
 app = FastAPI(title="BrewHaven API")
